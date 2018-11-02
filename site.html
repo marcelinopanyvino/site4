@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+    <head meta charset="utf-8">
+        <style>
+body{
+    background-color: aquamarine;
+}
+ul li ul li{
+    display: none;
+}
+ul li{
+    float: left;
+    width: 360px;
+    display: block;
+    text-align: center;
+    background-color: green;
+    line-height: 40px;
+    font-size: 1rem;
+    font-family: cursive;
+}
+ul li a:hover{
+    font-size: 30px;
+    background-color: greenyellow;
+}
+/*#ACI a:hover{
+    font-size: 30px;
+    background-color: greenyellow;
+}*/
+ul li:hover ul li{
+    display: block;
+}
+/**ul li li:hover {
+    display: block;
+}**/
+            .div{
+                left: 20px;
+            }
+#vid{
+    position: relative;
+    position: absolute;
+    left: 5%;
+    top: 70px;
+    width: 1000px;
+    padding-bottom: 20px;
+    z-index: -1;
+}
+            footer{
+                position: fixed;
+                background-color: black;
+                padding: 10px;
+                text-align: left;
+                color: white;
+                top: 1000px;
+                width: 100%;
+                z-index: -1;
+            }
+            aside{
+                position: absolute;
+                left: 75%;
+                top: 20%;
+            }
+            .CS{
+                position: absolute;
+                top: 87%;
+                left: 10%;
+            }
+            #love{
+                border-radius: 50px;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                left: -60px;
+                top: 0%;
+            }
+        </style>
+        <title>South Park Fan page</title>
+    </head>
+    
+    <body>
+        <div class="listing">
+        <ul>
+            <li><a href='home.html'>Home</a>
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+                <li><a>Shows</a>
+                    <ul>
+                        <li><a>Season 1</a></li>
+                        <li><a>Season 2</a></li>
+                        <li><a>Season 3</a></li>
+                        <li><a>Season 4</a></li>
+                        <li><a>Season 5</a></li>
+                        <li><a>Season 6</a></li>
+                        <li><a>Season 7</a></li>
+                        <li><a>Season 8</a></li>
+                    </ul>
+                </li>
+                <li><a>Game</a>
+                    <ul>
+                    <li></li>
+                </ul>
+                </li>
+                <li id='ACI'><a>Account info</a></li>
+            
+        </ul>
+            <aside></aside>
+        </div>
+        <aside> 
+            <form method="get">
+                <input type='text' name='fname' placeholder='Type in your first name' size=20px;>&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='Lname' placeholder='Type in your last name' size=20px;> <br></br>
+                <input type='email' name='mail' placeholder='Type in your email' size=48px;><br></br>
+                <input type='password' id='pass1' placeholder='Type in your password' size=25px;><br></br>
+                <input type='password' id='pass2' placeholder='please retype your password' size=25px;><br></br>
+                <p id="error"></p>
+                <input type='submit' value='log in' onclick="check()">
+            </form>
+        </aside>
+        <video src='Intro.mp4' controls id='vid'></video>
+        <div Class="CS">
+            <a href='https://www.youtube.com/channel/UCENZo8q53ll9jiTDuNo5nSA?view_as=subscriber'><img src='roundit.png' id='love'></a><label> <textarea cols='126' rows='4' placeholder="Type in your comment..."></textarea></label><br></br>
+            <input type='submit' name='post' value='post'style='float:right'>
+        </div>
+        <footer>
+            <p><strong>must be 18!</strong></p>
+        </footer>
+
+        <script>
+        function check(){
+            var pass1=
+                document.getElementById("pass1").value;
+            var pass2=
+                document.getElementById("pass2").value;
+            var errorMessage =
+                document.getElementById("error");
+            var errorthrow = "";
+            
+                if(pass1.length<8){
+                    errorthrow += "Password must be atleast 8 characters long, ";
+                }
+                if(/[A-Z]/g.test(pass1) == false){
+                    errorthrow += "password should include atleast 1 capital letter";
+                }
+                if(pass1 != pass2){
+                    errorthrow += " password does not match, please check and try again";
+                }
+            if(errorthrow == ""){
+                windows.alert("You're password is valid");
+            }
+            else{
+                window.alert(errorthrow);
+            }
+        }
+    </script>
+    </body>
+</html>
